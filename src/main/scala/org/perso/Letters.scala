@@ -12,6 +12,17 @@ object Letters {
     letters1.forall(letters2.contains) && letters2.forall(letters1.contains)
   }
 
+  def isPalindrome(word: String): Boolean = {
+    val lWord = word.toLowerCase
+
+    val nb = Math.round(lWord.length / 2)
+
+    val left = lWord.take(nb)
+    val right = lWord.takeRight(nb)
+
+    left == right.reverse
+  }
+
   def isPangram(sentence: String): Boolean = {
     val letters = sentence.toLowerCase()
 
