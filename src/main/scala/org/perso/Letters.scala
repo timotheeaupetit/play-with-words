@@ -1,7 +1,7 @@
 package org.perso
 
 
-object Pangram {
+object Letters {
 
   private val alphabet = "abcdefghijklmnopqrstuvwxyz"
 
