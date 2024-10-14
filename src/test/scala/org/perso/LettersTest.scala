@@ -41,6 +41,19 @@ class LettersTest extends AnyFunSpec {
       val word = "palindrome"
       assert(!Letters.isPalindrome(word), s"$word is not a palindrome")
     }
+
+    it("should return true when a sentence is a palindrome, regardless of special characters") {
+      val sentence1 = "Ainsi Anaïs nia"
+      val sentence2 = "Engage le jeu, que je le gagne !"
+      val sentence3 = "N'a-t-elle pas ôté cet os à Pelletan ?"
+      val sentence4 = "L'âme sûre ruse mal"
+      val sentence5 = "Léon a rasé César à Noël"
+      assert(Letters.isPalindrome(sentence1), s"\"$sentence1\" is a palindrome")
+      assert(Letters.isPalindrome(sentence2), s"\"$sentence2\" is a palindrome")
+      assert(Letters.isPalindrome(sentence3), s"\"$sentence3\" is a palindrome")
+      assert(Letters.isPalindrome(sentence4), s"\"$sentence4\" is a palindrome")
+      assert(Letters.isPalindrome(sentence5), s"\"$sentence5\" is a palindrome")
+    }
   }
 
   describe("isPangram") {
