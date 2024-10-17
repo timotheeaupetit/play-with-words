@@ -12,13 +12,23 @@ object Letters {
     letters1.forall(letters2.contains) && letters2.forall(letters1.contains)
   }
 
-  def isPalindrome(word: String): Boolean = {
-    val lWord = word.toLowerCase
+  def isPalindrome(str: String): Boolean = {
+    val letters = str
+      .toLowerCase
+      .replaceAll(" ", "")
+      .replaceAll("['!?.,=;:-]", "")
+      .replaceAll("[áâàåä]", "a")
+      .replaceAll("[éêèë]", "e")
+      .replaceAll("[íîìï]", "i")
+      .replaceAll("[óôòö]", "o")
+      .replaceAll("[úûùü]", "u")
+      .replaceAll("ç", "c")
+      .replaceAll("ñ", "n")
 
-    val nb = Math.round(lWord.length / 2)
+    val nb = letters.length / 2
 
-    val left = lWord.take(nb)
-    val right = lWord.takeRight(nb)
+    val left = letters.take(nb)
+    val right = letters.takeRight(nb)
 
     left == right.reverse
   }
